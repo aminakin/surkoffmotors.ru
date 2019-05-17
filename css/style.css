@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'inglobal';
+  src: url('../fonts/inglobal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inglobal';
+  src: url('../fonts/inglobal-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inglobal';
+  src: url('../fonts/inglobal-italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'inglobal';
+  src: url('../fonts/inglobal-bold-italic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #f96502;
+}
+
+body {
+  font-family: 'inglobal', Arial, sans-serif;
+  font-size: 20px;
+
+}
+
+.container-center {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.button {
+  outline: none;
+  border: none;
+  font-family: 'inglobal', Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(../img/header-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  text-align: center;
+  color: #f96502;
+}
+
+.line {
+  width: 80%;
+  border: 1px solid #333;
+  border-bottom: 1px solid #111;
+}
+
+.parts-content, .repair-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+
+.parts-item, .repair-item {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.repair-title {
+  text-align: right;
+}
+
+.other-services-title {
+  text-align: center;
+}
+
+.footer-logo {
+  text-align: right;
+  background-color: #f96502;
+  padding: 5px 35px 5px 0;
+}
