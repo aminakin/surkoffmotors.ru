@@ -149,6 +149,7 @@ body {
 
 .second-level-menu-show {
   display: block;
+  z-index: 5;
 }
 
 .second-level-menu a {
@@ -156,7 +157,7 @@ body {
 }
 
 .menu-navigation {
-  display: block;
+  display: none;
   height: 0;
   opacity: 0;
   position: absolute;
@@ -165,6 +166,7 @@ body {
   text-align: left;
   border-radius: 5px;
   transition: height 0.4s, opacity 0.4s;
+  z-index: -1;
 }
 
 .menu-navigation-show {
@@ -334,7 +336,234 @@ section {
   border-radius: 3px;
 }
 
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@keyframes show {
+0% {transform: scale(0);}
+100% {transform: scale(1);}
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.modal {
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 3;
+}
+
+.modal-write-us label {
+  font-size: 18px;
+  line-height: 18px;
+  color: #f96502;
+}
+
+.modal-write-us {
+  display: none;
+  width: 300px;
+  top: 10vw;
+  left: 50%;
+  margin-left: -170px;
+  padding: 20px;
+  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.75);
+  animation: show 0.3s;
+}
+
+.write-us-close {
+  top: 16px;
+  right: 9px;
+}
+
+.write-us-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.write-us-item {
+  margin: 0;
+  margin-bottom: 19px;
+}
+
+.write-us-form .write-us-item {
+  width: 100%;
+}
+
+.write-us-item input {
+  color: #0b3a4c;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 15px 10px 15px;
+}
+
+.write-us-item label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.write-us-item .agree {
+display: block;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 15px 15px 15px 0;
+}
+
+.write-us-button {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #f96502;
+  padding: 10px 0;
+  border: none;
+  box-shadow: 6px 2px 7px black;
+  width: 100%;
+  outline: 0;
+}
+
+.write-us-button:active {
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+.modal-close {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  font-size: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -2px;
+  width: 25px;
+  height: 3px;
+  background-color: #f96502;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-show {
+  display: block;
+  animation: show 0.3s;
+}
+
+.modal-error {
+  animation: shake 0.6s;
+}
+
+.parts-main .parts-title {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: -1.26em;
+  color: white;
+  font-size: 2em;
+  padding: 1.5em 0;
+  background-image: url(../img/title-img.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 3;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.advantages-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #515151;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.brands-list {
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.brands-item {
+  padding: 0.5em;
+}
+
+.promo {
+  display: flex;
+}
+
+.promo-content {
+  width: 70%;
+  color: #515151;
+  text-align: justify;
+  text-indent: 2.5em;
+}
+
+.promo-content p {
+  margin-bottom: 1em;
+}
+
+.inner-callback {
+  text-align: center;
+  background-image: url(../img/callback-background.png);
+  background-color: #f96502;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.inner-callback-button {
+  color: white;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #515151;
+  padding: 0.5em 1em;
+  box-shadow: 6px 2px 7px black;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 769px) {
 body {
   font-size: 15px;
 }
@@ -370,5 +599,34 @@ body {
 
 .parts-content, .repair-content, .other-services-content {
   padding: 0 2em;
+}
+
+.contacts-items p {
+  text-align: center;
+}
+
+.advantages-item {
+  width: 50%;
+}
+
+.advantages-item img {
+  width: 150px;
+  height: 150px;
+}
+
+.brands-item {
+  width: 25%;
+}
+
+.promo {
+  flex-wrap: wrap;
+}
+
+.promo-content {
+  width: 100%;
+}
+
+.promo-img {
+  display: none;
 }
 }

@@ -15,20 +15,21 @@
       <button class="button menu-button" type="button" name="menu-button">МЕНЮ</button>
       <nav class="menu-navigation">
         <ul class="first-level-menu">
-          <li><a class="second-menu-show" href="#">Запчасти</a>
+          <li><a href="index.html">Главная</a></li>
+          <li><a class="second-menu-show" href="loader-parts.html">Запчасти</a>
             <ul class="second-level-menu">
-              <li><a href="#">Погрузчики</a></li>
-              <li><a href="#">Гидроборта</a></li>
+              <li><a href="loader-parts.html">Погрузчики</a></li>
+              <li><a href="other-parts.html">Спецтехника</a></li>
             </ul>
           </li>
-          <li><a href="#">Услуги</a></li>
-          <li><a href="#">Новости</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
       <a class="telephone" href="tel:+74012742006">+7 (4012) 742 006</a>
     </div>
-    <a class="main-logo" href="index.html"><img src="img/logo.png"></a>
+    <p class="main-logo"><a href="index.html"><img src="img/logo.png"></a><p>
   </header>
   <footer class="footer container-center">
     <div class="contacts">
@@ -41,6 +42,25 @@
     <iframe src="https://yandex.ru/map-widget/v1/-/CCfrf8ZZ" width="100%" height="400" frameborder="1" allowfullscreen="true"></iframe>
 <p class="footer-logo"><img src="img/logo.png" width="123" height="38"></p>
   </footer>
+  <section class="modal modal-write-us">
+    <form class="write-us-form" action="send.php" method="post">
+      <p class="write-us-item">
+        <label for="write-us-name">Ваше имя:</label>
+        <input class="write-us-name" type="text" id="write-us-name" name="name" placeholder="Имя Фамилия" required>
+      </p>
+      <p class="write-us-item">
+        <label for="write-us-tel">Ваш телефон:</label>
+        <input class="write-us-tel" type="tel" id="write-us-tel" name="tel" placeholder="+7(999)123-45-67" required>
+      </p>
+      <p class="write-us-item">
+<input class="agree" id="agree" type="checkbox" required>
+        <label class="label-agree" for="agree">Заполняя форму, Вы даете согласие на обработку своих персональных данных</label>
+      </p>
+      <button class="button write-us-button" type="submit">ОТПРАВИТЬ</button>
+    </form>
+    <button class="modal-close write-us-close" type="button">Закрыть</button>
+  </section>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

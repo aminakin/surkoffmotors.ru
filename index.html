@@ -15,10 +15,10 @@
       <button class="button menu-button" type="button" name="menu-button">МЕНЮ</button>
       <nav class="menu-navigation">
         <ul class="first-level-menu">
-          <li><a class="second-menu-show" href="parts.html">Запчасти</a>
+          <li><a class="second-menu-show" href="loader-parts.html">Запчасти</a>
             <ul class="second-level-menu">
-              <li><a href="#">Погрузчики</a></li>
-              <li><a href="#">Гидроборта</a></li>
+              <li><a href="loader-parts.html">Погрузчики</a></li>
+              <li><a href="other-parts.html">Спецтехника</a></li>
             </ul>
           </li>
           <li><a href="services.html">Услуги</a></li>
@@ -28,7 +28,7 @@
       </nav>
       <a class="telephone" href="tel:+74012742006">+7 (4012) 742 006</a>
     </div>
-    <a class="main-logo" href="index.html"><img src="img/logo.png"></a>
+    <p class="main-logo"><a href="index.html"><img src="img/logo.png"></a><p>
   </header>
   <main class="main container-center">
     <h1 class="visually-hidden">Запчасти и ремонт любой спецтехники</h1>
@@ -41,12 +41,12 @@
    <p class="parts-title"><img src="img/section-title-background-left.png" width="500" height="auto" alt="Осуществляем поставку запчастей."</p>
    <div class="parts-content">
      <p class="parts-item">
-       <a href="#"><img src="img/loader.png" width="465" height="auto"></a>
-       <a href="#">ПОГРУЗЧИКОВ</a>
+       <a href="loader-parts.html"><img src="img/loader.png" width="465" height="auto"></a>
+       <a href="loader-parts.html">ПОГРУЗЧИКОВ</a>
      </p>
      <p class="parts-item">
-       <a href="#"><img src="img/digger.png" width="465" height="auto"></a>
-       <a href="#">СПЕЦТЕХНИКИ</a>
+       <a href="other-parts.html"><img src="img/digger.png" width="465" height="auto"></a>
+       <a href="other-parts.html">СПЕЦТЕХНИКИ</a>
      </p>
      </div>
    </section>
@@ -54,12 +54,12 @@
      <p class="repair-title"><img src="img/section-title-background-right.png" width="500" height="auto" alt="Оказываем услуги по ремонту."</p>
      <div class="repair-content">
        <p class="repair-item">
-         <a href="#"><img src="img/loader.png" width="465" height="auto"></a>
-         <a href="#">ПОГРУЗЧИКОВ</a>
+         <a href="services.html"><img src="img/loader.png" width="465" height="auto"></a>
+         <a href="services.html">ПОГРУЗЧИКОВ</a>
        </p>
        <p class="repair-item">
-         <a href="#"><img src="img/digger.png" width="465" height="auto"></a>
-         <a href="#">СПЕЦТЕХНИКИ</a>
+         <a href="services.html"><img src="img/digger.png" width="465" height="auto"></a>
+         <a href="services.html">СПЕЦТЕХНИКИ</a>
        </p>
        </div>
    </section>
@@ -72,7 +72,7 @@
    </section>
    <section class="callback">
      <div class="callback-content">
-<p class="callback-request">Сломалась спецтехника? Позвоните нам!<button class="button callback-button" type="button" name="callback-button">Оставить заявку</button></p>
+<p class="callback-request">Сломалась спецтехника? Позвоните нам!<button id="button" class="button callback-button" type="button" name="callback-button">Оставить заявку</button></p>
 <p><img src="img/callback-img.png" width="969" height="auto"></p>
        </div>
    </section>
@@ -88,6 +88,25 @@
     <iframe src="https://yandex.ru/map-widget/v1/-/CCfrf8ZZ" width="100%" height="400" frameborder="1" allowfullscreen="true"></iframe>
 <p class="footer-logo"><img src="img/logo.png" width="123" height="38"></p>
   </footer>
+    <section id="popup" class="modal modal-write-us">
+    <form class="write-us-form" action="send.php" method="post">
+      <p class="write-us-item">
+        <label for="write-us-name">Ваше имя:</label>
+        <input class="write-us-name" type="text" id="write-us-name" name="name" placeholder="Имя Фамилия" required>
+      </p>
+      <p class="write-us-item">
+        <label for="write-us-tel">Ваш телефон:</label>
+        <input class="write-us-tel" type="tel" id="write-us-tel" name="tel" placeholder="+7(999)123-45-67" required>
+      </p>
+      <p class="write-us-item">
+<input class="agree" id="agree" type="checkbox" required>
+        <label class="label-agree" for="agree">Заполняя форму, Вы даете согласие на обработку своих персональных данных</label>
+      </p>
+      <button class="button write-us-button" type="submit">ОТПРАВИТЬ</button>
+    </form>
+    <button class="modal-close write-us-close" type="button">Закрыть</button>
+  </section>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
