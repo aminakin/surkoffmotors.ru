@@ -5,6 +5,11 @@ var menu = document.querySelector('.menu-navigation');
 var secondMenu = document.querySelector('.second-level-menu');
 var writeUs = document.querySelector('.modal-write-us');
 var modalClose = document.querySelector('.modal-close');
+var resultFormClose = document.querySelector('.result-form-close');
+var agree = document.getElementById('agree');
+var agreeForm = document.querySelector('.modal-result');
+var okButton = document.querySelector('.ok-button');
+
 
 menuShow.addEventListener('click', function(evt) {
   evt.preventDefault();
@@ -24,6 +29,9 @@ window.addEventListener('keydown', function(evt) {
     if (writeUs.classList.contains('modal-show')) {
       writeUs.classList.remove('modal-show');
     }
+    if (agreeForm.classList.contains('modal-show')) {
+      agreeForm.classList.remove('modal-show');
+    }
   }
 });
 
@@ -33,15 +41,24 @@ modalClose.addEventListener('click', function(evt) {
   }
 });
 
-secondMenuShow.addEventListener('mouseover', function(evt) {
-  evt.preventDefault();
-  secondMenu.classList.add('second-level-menu-show');
+resultFormClose.addEventListener('click', function(evt) {
+  if (agreeForm.classList.contains('modal-show')) {
+    agreeForm.classList.remove('modal-show');
+  }
 });
 
-//writeUsShow.addEventListener('click', function(evt) {
-//  evt.preventDefault();
-//  writeUs.classList.add('modal-show');
-//});
+okButton.addEventListener('click', function(evt) {
+  if (agreeForm.classList.contains('modal-show')) {
+    agreeForm.classList.remove('modal-show');
+  }
+});
+
+secondMenuShow.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  if (secondMenu.classList.contains('second-level-menu-show')) {
+    secondMenu.classList.remove('second-level-menu-show');}
+  else { secondMenu.classList.add('second-level-menu-show');}
+});
 
 $('#button').click(function(e) {
     var $message = $('#popup');
@@ -61,3 +78,32 @@ $('#button').click(function(e) {
 
     e.preventDefault();
 });
+
+$(document).ready(function() {
+    $("#send-form").click(
+		function(){
+          if (agree.checked) {
+			sendAjaxForm('result_form', 'ajax_form', 'send.php');
+			return false;
+		}
+        }
+);
+});
+
+function sendAjaxForm(result_form, ajax_form, url) {
+    jQuery.ajax({
+        url:     "http://surkoffmotors.ru/send.php", //url страницы (action_ajax_form.php)
+        type:     "POST", //метод отправки
+        dataType: "html", //формат данных
+        data: jQuery("#"+ajax_form).serialize(),  // Сеарилизуем объект
+        success: function(response) { //Данные отправлены успешно
+
+        	writeUs.classList.remove('modal-show');
+          agreeForm.classList.add('modal-show');
+    	},
+    	error: function(response) { // Данные не отправлены
+    		writeUs.classList.remove('modal-show');
+          agreeForm.classList.add('modal-show');
+    	}
+ 	});
+};

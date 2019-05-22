@@ -375,7 +375,7 @@ section {
   color: #f96502;
 }
 
-.modal-write-us {
+.modal-write-us, .modal-result {
   display: none;
   width: 300px;
   top: 10vw;
@@ -386,7 +386,13 @@ section {
   animation: show 0.3s;
 }
 
-.write-us-close {
+.modal-result {
+  padding-top: 2em;
+  top: 20vw;
+  color: #f96502;
+}
+
+.write-us-close, .result-form-close {
   top: 16px;
   right: 9px;
 }
@@ -427,7 +433,7 @@ display: block;
   margin: 15px 15px 15px 0;
 }
 
-.write-us-button {
+.write-us-button, .ok-button {
   color: white;
   font-size: 20px;
   cursor: pointer;
@@ -440,7 +446,11 @@ display: block;
   outline: 0;
 }
 
-.write-us-button:active {
+.ok-button {
+  margin-top: 1em;
+}
+
+.write-us-button:active, .ok-button:active {
   opacity: 0.7;
   box-shadow: none;
 }
@@ -562,6 +572,8 @@ display: block;
   padding: 0.5em 1em;
   box-shadow: 6px 2px 7px black;
 }
+
+
 
 @media only screen and (min-width : 320px) and (max-width : 769px) {
 body {

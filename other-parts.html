@@ -127,24 +127,31 @@ Kalmar, Fantuzzi, Konecranes, Hyster, Linde, Mafi, Kalmar-Sisu.
 <p class="footer-logo"><img src="img/logo.png" width="123" height="38"></p>
   </footer>
   <section id="popup" class="modal modal-write-us">
-    <form class="write-us-form" action="send.php" method="post">
-      <p class="write-us-item">
-        <label for="write-us-name">Ваше имя:</label>
-        <input class="write-us-name" type="text" id="write-us-name" name="name" placeholder="Имя Фамилия" required>
-      </p>
-      <p class="write-us-item">
-        <label for="write-us-tel">Ваш телефон:</label>
-        <input class="write-us-tel" type="tel" id="write-us-tel" name="tel" placeholder="+7(999)123-45-67" required>
-      </p>
-      <p class="write-us-item">
-<input class="agree" id="agree" type="checkbox" required>
-        <label class="label-agree" for="agree">Заполняя форму, Вы даете согласие на обработку своих персональных данных</label>
-      </p>
-      <button class="button write-us-button" type="submit">ОТПРАВИТЬ</button>
-    </form>
-    <button class="modal-close write-us-close" type="button">Закрыть</button>
-  </section>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <form class="write-us-form" action="" method="post" id="ajax_form">
+    <p class="write-us-item">
+      <label for="write-us-name">Ваше имя:</label>
+      <input class="write-us-name" type="text" id="write-us-name" name="name" placeholder="Имя Фамилия" required>
+    </p>
+    <p class="write-us-item">
+      <label for="write-us-tel">Ваш телефон:</label>
+      <input class="write-us-tel" type="tel" id="write-us-tel" name="tel" placeholder="+7(999)123-45-67" required>
+    </p>
+    <p class="write-us-item">
+<input class="agree" id="agree" type="checkbox" value="1" required>
+      <label class="label-agree" for="agree">Заполняя форму, Вы даете согласие на обработку своих персональных данных</label>
+    </p>
+    <button id="send-form" class="button write-us-button" type="submit">ОТПРАВИТЬ</button>
+  </form>
+  <button class="modal-close write-us-close" type="button">Закрыть</button>
+
+</section>
+<div class="modal modal-result" id="result_form">
+ <p>Спасибо, мы Вам перезвоним в ближайшее время.</p>
+ <button class="modal-close result-form-close" type="button">Закрыть</button>
+ <button class="button ok-button">ОК</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
