@@ -80,7 +80,7 @@ $('#button').click(function(e) {
 });
 
 $(document).ready(function() {
-    $("#send-form").click(
+    $("#send-form").on('click touch', 
 		function(){
           if (agree.checked) {
 			sendAjaxForm('result_form', 'ajax_form', 'send.php');
@@ -97,7 +97,7 @@ function sendAjaxForm(result_form, ajax_form, url) {
         dataType: "html", //формат данных
         data: jQuery("#"+ajax_form).serialize(),  // Сеарилизуем объект
         success: function(response) { //Данные отправлены успешно
-
+        	
         	writeUs.classList.remove('modal-show');
           agreeForm.classList.add('modal-show');
     	},
